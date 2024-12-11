@@ -1,0 +1,141 @@
+/* styles.css */
+
+/* Conteneur principal */
+.container {
+  display: flex;
+}
+
+/* Conteneur de la carte */
+.map-container {
+  width: 80%;
+  height: 100vh;
+  position: relative;
+}
+
+/* Panneau de contrôle */
+.control-panel {
+  width: 20%;
+  padding: 10px;
+  background-color: rgba(10, 24, 40, 0.9); /* Bleu foncé classique (#0A1828) */
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  color: white;
+  animation: slideIn 0.5s ease-in-out; /* Animation d'apparition du panneau */
+}
+
+/* Section pour chaque groupe de couches */
+.layer-group {
+  margin-bottom: 20px;
+}
+
+/* Titre des groupes de couches avec arrière-plan rectangulaire et interaction au clic */
+.control-panel h3 {
+  background-color: #178582; /* Couleur turquoise (#178582) */
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.control-panel h3:hover {
+  background-color: #146c67; /* Légère modification de la couleur au survol */
+}
+
+/* Icône d'œil pour remplacer les cases à cocher */
+.eye-icon {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  fill: #BFA181; /* Couleur or (#BFA181) */
+  transition: fill 0.3s ease;
+}
+
+.eye-icon:hover {
+  fill: #c39c6f; /* Couleur or plus clair au survol */
+}
+
+/* Animation pour faire apparaître/dissoudre le menu des couches */
+@keyframes slideIn {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Boutons pour dessiner et rechercher */
+button {
+  background-color: #178582;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #146c67;
+}
+
+/* Style pour le polygone dessiné */
+.ol-draw-feature {
+  stroke: #ff0000; /* Couleur du bord du polygone */
+  stroke-width: 2;
+  fill: rgba(255, 0, 0, 0.3); /* Remplissage du polygone */
+  cursor: pointer;
+}
+
+/* Style pour les points d'interaction avec les couches */
+.ol-popup {
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  color: #333;
+}
+
+/* Conteneur du menu latéral */
+.layer-control {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Style des entrées de couches dans le panneau de contrôle */
+.layer-control .layer-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.layer-control .layer-entry:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+#map {
+  width: 80%;
+  height: 100vh;
+  float: left;
+}
+#sidebar {
+  width: 20%;
+  height: 100vh;
+  float: right;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+}
+#interaction-log {
+  margin-top: 20px;
+}
